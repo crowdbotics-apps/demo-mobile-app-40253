@@ -1,20 +1,27 @@
-import React from "react";
-import { StyleSheet, ScrollView, SafeAreaView } from "react-native";
+import { ImageBackground } from "react-native";
+import { StyleSheet, SafeAreaView } from "react-native";
 
 const Untitled1 = () => {
   return <SafeAreaView style={styles.safeArea}>
-        <ScrollView contentContainerStyle={{
-      backgroundColor: '#f0f0f1',
-      padding: 10,
-      position: 'relative',
-      flex: 1
-    }}></ScrollView>
-    </SafeAreaView>;
+        
+    <ImageBackground style={styles.DilvrmFk} source={{
+      uri: "https://www.pepsi.com/en-us/uploads/images/twil-can.png"
+    }} resizeMode="cover"></ImageBackground></SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
   safeArea: {
-    height: '100%'
+    height: '100%',
+    backgroundColor: "#024FA9"
+  },
+  DilvrmFk: {
+    width: 107,
+    height: 62,
+    transform: [{
+      rotate: "0deg"
+    }],
+    top: 0,
+    left: 0
   }
 });
 export default Untitled1;
