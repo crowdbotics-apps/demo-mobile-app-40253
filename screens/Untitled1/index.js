@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
 import { Text } from "react-native";
 import { View } from "react-native";
@@ -5,11 +6,14 @@ import { ImageBackground } from "react-native";
 import { StyleSheet, SafeAreaView } from "react-native";
 
 const GettingStarted = () => {
+  const navigation = useNavigation();
   return <SafeAreaView style={styles.safeArea}>
       <ImageBackground style={styles.DilvrmFk} source={{
       uri: "https://www.pepsi.com/en-us/uploads/images/can-pepsi.png?mtime=20180110134757"
     }} resizeMode="cover"></ImageBackground>
-      <Pressable>
+      <Pressable onPress={() => {
+      navigation.navigate("productListing");
+    }}>
         <View style={styles.JGHmklYS}>
           <Text style={styles.xKkbEuKO}>{"ORDER PEPSI"}</Text>
         </View>
