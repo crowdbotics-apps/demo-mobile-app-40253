@@ -1,56 +1,60 @@
+import { Pressable } from "react-native";
 import { Text } from "react-native";
 import { View } from "react-native";
 import { ImageBackground } from "react-native";
 import { StyleSheet, SafeAreaView } from "react-native";
 
-const Untitled1 = () => {
+const GettingStarted = () => {
   return <SafeAreaView style={styles.safeArea}>
-        
-    <ImageBackground style={styles.DilvrmFk} source={{
-      uri: "https://www.pepsi.com/en-us/uploads/images/twil-can.png"
-    }} resizeMode="cover"></ImageBackground><View style={styles.YmZMBGQl}><Text style={styles.dSckYkYa}>{"GET STARTED"}</Text></View></SafeAreaView>;
+      <ImageBackground style={styles.DilvrmFk} source={{
+      uri: "https://www.pepsi.com/en-us/uploads/images/can-pepsi.png?mtime=20180110134757"
+    }} resizeMode="cover"></ImageBackground>
+      <Pressable>
+        <View style={styles.JGHmklYS}>
+          <Text style={styles.xKkbEuKO}>{"ORDER PEPSI"}</Text>
+        </View>
+      </Pressable>
+    </SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
   safeArea: {
-    height: '100%',
-    backgroundColor: "#04479E"
+    height: "100%",
+    backgroundColor: "#0164C3"
   },
   DilvrmFk: {
-    width: 356,
-    height: 486,
+    width: 293,
+    height: 572,
     transform: [{
       rotate: "0deg"
     }],
     top: 0,
-    left: 0
+    left: 31.5,
+    position: "absolute"
   },
-  YmZMBGQl: {
-    height: 86,
-    width: 320,
-    backgroundColor: "#04479E",
-    borderRadius: 0,
+  JGHmklYS: {
+    height: 62,
+    width: 205,
+    backgroundColor: "#0164C3",
+    borderRadius: 40,
     color: "#777777",
-    position: "relative",
-    left: 0,
-    top: 0,
-    transform: [{
-      rotate: "0deg"
-    }]
-  },
-  dSckYkYa: {
-    width: 244,
-    height: 50,
-    lineHeight: 14,
-    fontSize: 30,
-    borderRadius: 0,
-    fontFamily: "Open Sans",
     position: "absolute",
-    top: 35,
-    left: 56,
-    textAlign: "center",
-    fontWeight: "700",
-    color: "#ffffff"
+    left: 75.5,
+    top: 455,
+    borderColor: "#ffffff",
+    borderWidth: 3
+  },
+  xKkbEuKO: {
+    width: 173,
+    height: 35,
+    lineHeight: 14,
+    fontSize: 25,
+    borderRadius: 0,
+    color: "#FFFFFF",
+    position: "absolute",
+    left: 10,
+    top: 22,
+    textAlign: "center"
   }
 });
-export default Untitled1;
+export default GettingStarted;
