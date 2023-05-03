@@ -23,14 +23,16 @@ const styles = StyleSheet.create({
     backgroundColor: "#0164C3"
   },
   DilvrmFk: {
-    width: 293,
-    height: 572,
+    width: 300,
+    height: 635,
     transform: [{
       rotate: "0deg"
     }],
-    top: 0,
-    left: 31.5,
-    position: "absolute"
+    top: -63,
+    left: 25,
+    position: "absolute",
+    flexDirection: "row",
+    flex: 1
   },
   JGHmklYS: {
     height: 62,
