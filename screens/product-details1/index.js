@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Text, View, StyleSheet, Image, Pressable } from "react-native";
-import { Slider } from "react-native-elements";
 
 const ProductDetails = () => {
   const [product, setProduct] = useState({});
@@ -36,11 +35,9 @@ const ProductDetails = () => {
         <View style={styles.bar} />
         <Pressable><Text style={styles.title}>{product.name}</Text></Pressable>
         <Text style={styles.description}>{product.description}</Text>
-        <Slider minimumValue={1} maximumValue={3} step={1} value={size} onValueChange={setSize} minimumTrackTintColor="#ECECEC" maximumTrackTintColor="#ECECEC" thumbTintColor="#EA4335" thumbStyle={styles.thumb} trackStyle={styles.track} />
+        
         <View style={styles.flexRow}>
-          {["Small", "Medium", "Large"].map((item, index) => <Text key={index} style={[styles.sizeText, index === size - 1 ? styles.boldSizeText : null]}>
-              {item}
-            </Text>)}
+          {["Small", "Medium", "Large"].map(() => {})}
         </View>
         <View style={styles.counterContainer}>
           <View style={styles.priceContainer}>
@@ -106,28 +103,10 @@ const styles = StyleSheet.create({
     color: "#4E4E4E",
     textAlign: "justify"
   },
-  thumb: {
-    width: 30,
-    height: 30,
-    borderWidth: 7,
-    borderColor: "rgba(249,216,217,0.6)"
-  },
-  track: {
-    height: 8,
-    borderRadius: 5
-  },
   flexRow: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center"
-  },
-  sizeText: {
-    fontSize: 16,
-    color: "#9A9A9A"
-  },
-  boldSizeText: {
-    color: "#000",
-    fontWeight: "bold"
   },
   priceText: {
     color: "#121212",
