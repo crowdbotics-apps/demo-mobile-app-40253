@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { useState, useEffect } from "react";
 import { Text, View, StyleSheet, Image, Pressable } from "react-native";
 
@@ -5,24 +6,15 @@ const PepsiProductDetail = () => {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState(3);
-  useEffect(name => {
+  useEffect(() => {
     setProduct({
-      name: `${name}`,
+      name: "Pepsi 24 pack",
       description: "Includes 24 (12oz) cans of Pepsi Cola. The original bold, robust, and refreshing cola. Perfect size to take on the go for bold refreshment anytime, anywhere. Try serving with a twist of fresh lemon or lime. Great for portion control",
       price: 12.5,
       discountedPrice: 10,
       caption: "Pepsi 24 pack (12 oz)"
     });
   }, []);
-
-  const decrement = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    } else {
-      setQuantity(1);
-    }
-  };
-
   return <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image source={require("./24-pack.jpeg")} style={styles.logo} />
@@ -46,15 +38,7 @@ const PepsiProductDetail = () => {
               ${product.price && product.price.toFixed(2)}
             </Text>
           </View>
-          <View style={styles.counter}>
-            <Pressable style={[styles.counterBtn, styles.decrement]} onPress={() => decrement()}>
-              <Image source={require("./assets/minusIcon.png")} style={styles.icon} />
-            </Pressable>
-            <Text style={styles.counterText}>{quantity}</Text>
-            <Pressable style={[styles.counterBtn, styles.increment]} onPress={() => {}}>
-              <Image source={require("./assets/plusIcon.png")} style={styles.icon} />
-            </Pressable>
-          </View>
+          
         </View>
         <Text style={styles.description}>{product.caption}</Text>
         <Button buttonText="Confirm" style={styles.button} />
@@ -128,33 +112,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 20
   },
-  counter: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    backgroundColor: "#F8F5F2",
-    width: 110,
-    height: 35,
-    borderRadius: 10
-  },
-  counterBtn: {
-    width: 35,
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100%",
-    borderRadius: 10
-  },
-  decrement: {
-    backgroundColor: "#E1E1E1"
-  },
-  increment: {
-    backgroundColor: "#E84C4F"
-  },
-  icon: {
-    width: 15,
-    height: 15,
-    resizeMode: "contain"
-  },
   button: {
     flex: 1,
     justifyContent: "flex-end",
@@ -164,6 +121,7 @@ const styles = StyleSheet.create({
 export default PepsiProductDetail;
 
 const Button = params => {
+  const navigation = useNavigation();
   const backgroundColor = params.color || "#000";
   const textColor = params.textColor || "#fff";
   const btnStyle = {
@@ -176,10 +134,10 @@ const Button = params => {
   };
   return <View style={[buttonStyles.btnContainer, params.style]}>
       <View style={!params.hideShadow ? buttonStyles.shadowContainer : null}>
-        <Pressable style={[buttonStyles.btn, btnStyle]} onPress={params.onPress}>
-          <Text style={[buttonStyles.btnText, btnText]}>
-            {params.buttonText}
-          </Text>
+        <Pressable style={[buttonStyles.btn, btnStyle]} onPress={() => {
+        navigation.navigate("shoppingCart");
+      }}>
+          <Text style={[buttonStyles.btnText, btnText]}>{"Add to Cart"}</Text>
           <View style={styles.childrenContainer}>{params.children}</View>
         </Pressable>
       </View>

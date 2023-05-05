@@ -10,21 +10,14 @@ const ShoppingCartScreen = () => {
           </View>
           <View style={styles.cardContent}>
             <Text style={styles.cardTextOne}>Delivery</Text>
-            <Text style={styles.cardTextOne}>1.25$</Text>
+            <Text style={styles.cardTextOne}>{"$1.25"}</Text>
           </View>
           <View style={styles.cardContent}>
             <Text style={styles.cardTextTwo}>Summary</Text>
-            <Text style={styles.cardTextTwo}>32.00$</Text>
+            <Text style={styles.cardTextTwo}>{"$32.00"}</Text>
           </View>
         </View>
-        <View style={styles.tabView}>
-          <View style={styles.selectedTab}>
-            <Text>Select all</Text>
-          </View>
-          <View style={styles.tabItem}>
-            <Text>Delete selected</Text>
-          </View>
-        </View>
+        
         <View style={styles.cardContent}>
           <Text style={styles.chartText}>Chart</Text>
           <Image resizeMode="contain" style={styles.cartImage} source={require("./assets/cart.png")} />
@@ -79,34 +72,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     color: "#1E2022"
-  },
-  tabView: {
-    width: "70%",
-    height: 48,
-    backgroundColor: "#F1F1F1",
-    flexDirection: "row",
-    alignItems: "center",
-    borderRadius: 10,
-    padding: 6,
-    marginVertical: 20
-  },
-  selectedTab: {
-    borderRadius: 10,
-    backgroundColor: "#fff",
-    width: "50%",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    shadowColor: "gray",
-    elevation: 10
-  },
-  tabItem: {
-    width: "50%",
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#F1F1F1",
-    borderRadius: 10
   },
   btnContainer: {
     marginVertical: 20,
