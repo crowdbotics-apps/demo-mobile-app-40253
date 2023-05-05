@@ -124,23 +124,27 @@ const Product = ({
     fontWeight: "bold"
   };
   return <Pressable onPress={() => {
-    navigation.navigate("productDetails1");
-  }}><View style={productStyles.container}>
-      <View style={productStyles.imageContainer}>
-        <Image source={require("./can-pepsi.png")} style={productStyles.productImage} />
+    navigation.navigate("productDetails1", {
+      name: "product.name"
+    });
+  }}>
+      <View style={productStyles.container}>
+        <View style={productStyles.imageContainer}>
+          <Image source={require("./can-pepsi.png")} style={productStyles.productImage} />
 
-        <Image source={product.isFavorite ? require("./assets/isFavouriteIcon.png") : require("./assets/favIcon.png")} style={productStyles.favIcon} />
-      </View>
-      <View style={productStyles.descriptionContainer}>
-        <Text style={productStyles.bold}>{product.name}</Text>
-        <View style={productStyles.availabilityTextContainer}>
-          <Text style={productStyles.availabilityText}>Purchase: </Text>
-          <Text style={availability}>
-            {product.status ? "Available" : "Not available"}
-          </Text>
+          <Image source={product.isFavorite ? require("./assets/isFavouriteIcon.png") : require("./assets/favIcon.png")} style={productStyles.favIcon} />
+        </View>
+        <View style={productStyles.descriptionContainer}>
+          <Text style={productStyles.bold}>{product.name}</Text>
+          <View style={productStyles.availabilityTextContainer}>
+            <Text style={productStyles.availabilityText}>Purchase: </Text>
+            <Text style={availability}>
+              {product.status ? "Available" : "Not available"}
+            </Text>
+          </View>
         </View>
       </View>
-    </View></Pressable>;
+    </Pressable>;
 };
 
 const productStyles = StyleSheet.create({

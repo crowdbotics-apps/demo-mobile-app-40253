@@ -5,9 +5,9 @@ const PepsiProductDetail = () => {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState(3);
-  useEffect(() => {
+  useEffect(name => {
     setProduct({
-      name: "Product name",
+      name: `${name}`,
       description: "Includes 24 (12oz) cans of Pepsi Cola. The original bold, robust, and refreshing cola. Perfect size to take on the go for bold refreshment anytime, anywhere. Try serving with a twist of fresh lemon or lime. Great for portion control",
       price: 12.5,
       discountedPrice: 10,
