@@ -57,7 +57,7 @@ const ProductListingScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff"
+    backgroundColor: "#FFFFFF"
   },
   productsContainer: {
     paddingHorizontal: 20
@@ -159,12 +159,13 @@ const productStyles = StyleSheet.create({
     alignItems: "center"
   },
   availabilityText: {
-    color: "#7C7C7C",
+    color: "#000000",
     fontSize: 12,
     fontWeight: "bold"
   },
   bold: {
-    fontWeight: "bold"
+    fontWeight: "bold",
+    color: "#000000"
   },
   favIcon: {
     position: "absolute",
