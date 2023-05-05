@@ -11,7 +11,7 @@ const ProductListingScreen = () => {
       name: "Pepsi 24 pack",
       status: true,
       isFavorite: false,
-      image: require("./assets/productImage.png")
+      image: require("/productImage.png")
     }, {
       id: 2,
       name: "Pepsi 15 pack",
@@ -23,7 +23,7 @@ const ProductListingScreen = () => {
       name: "Pepsi 20oz",
       status: true,
       isFavorite: false,
-      image: require("./assets/productImage2.png")
+      image: require("/20-oz.jpeg")
     }, {
       id: 4,
       name: "Wild Cherry 20oz",

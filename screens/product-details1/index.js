@@ -15,10 +15,6 @@ const PepsiProductDetail = () => {
     });
   }, []);
 
-  const increment = () => {
-    setQuantity(quantity + 1);
-  };
-
   const decrement = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
@@ -55,7 +51,7 @@ const PepsiProductDetail = () => {
               <Image source={require("./assets/minusIcon.png")} style={styles.icon} />
             </Pressable>
             <Text style={styles.counterText}>{quantity}</Text>
-            <Pressable style={[styles.counterBtn, styles.increment]} onPress={() => increment()}>
+            <Pressable style={[styles.counterBtn, styles.increment]} onPress={() => {}}>
               <Image source={require("./assets/plusIcon.png")} style={styles.icon} />
             </Pressable>
           </View>
