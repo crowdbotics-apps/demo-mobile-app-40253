@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Text, View, StyleSheet, Image, Pressable } from "react-native";
 
-const ProductDetails = () => {
+const PepsiProductDetail = () => {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState(3);
@@ -33,9 +33,11 @@ const ProductDetails = () => {
       </View>
       <View style={styles.cardContainer}>
         <View style={styles.bar} />
-        <Pressable><Text style={styles.title}>{product.name}</Text></Pressable>
+        <Pressable>
+          <Text style={styles.title}>{product.name}</Text>
+        </Pressable>
         <Text style={styles.description}>{product.description}</Text>
-        
+
         <View style={styles.flexRow}>
           {["Small", "Medium", "Large"].map(() => {})}
         </View>
@@ -163,7 +165,7 @@ const styles = StyleSheet.create({
     marginBottom: 20
   }
 });
-export default ProductDetails;
+export default PepsiProductDetail;
 
 const Button = params => {
   const backgroundColor = params.color || "#000";
