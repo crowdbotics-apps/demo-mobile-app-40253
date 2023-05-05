@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { Pressable } from "react-native";
 import { useState, useEffect } from "react";
 import { Text, StyleSheet, View, FlatList, Image } from "react-native";
@@ -116,12 +117,15 @@ const tabViewStyles = StyleSheet.create({
 const Product = ({
   product
 }) => {
+  const navigation = useNavigation();
   const availability = {
     color: product.status ? "#12D790" : "#EA4335",
     fontSize: 12,
     fontWeight: "bold"
   };
-  return <Pressable><View style={productStyles.container}>
+  return <Pressable onPress={() => {
+    navigation.navigate("productDetails1");
+  }}><View style={productStyles.container}>
       <View style={productStyles.imageContainer}>
         <Image source={require("./can-pepsi.png")} style={productStyles.productImage} />
 
