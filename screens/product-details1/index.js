@@ -34,7 +34,7 @@ const ProductDetails = () => {
       </View>
       <View style={styles.cardContainer}>
         <View style={styles.bar} />
-        <Text style={styles.title}>{product.name}</Text>
+        <Pressable><Text style={styles.title}>{product.name}</Text></Pressable>
         <Text style={styles.description}>{product.description}</Text>
         <Slider minimumValue={1} maximumValue={3} step={1} value={size} onValueChange={setSize} minimumTrackTintColor="#ECECEC" maximumTrackTintColor="#ECECEC" thumbTintColor="#EA4335" thumbStyle={styles.thumb} trackStyle={styles.track} />
         <View style={styles.flexRow}>

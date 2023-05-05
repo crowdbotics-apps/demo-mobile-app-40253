@@ -49,7 +49,7 @@ const ProductListingScreen = () => {
         item
       }) => <Product product={item} />} columnWrapperStyle={{
         justifyContent: "space-around"
-      }} showsVerticalScrollIndicator={false} />
+      }} showsVerticalScrollIndicator={false} style={styles.QLFbVZQY} />
       </View>
     </View>;
 };
@@ -61,6 +61,10 @@ const styles = StyleSheet.create({
   },
   productsContainer: {
     paddingHorizontal: 20
+  },
+  QLFbVZQY: {
+    width: 324,
+    height: 780
   }
 });
 export default ProductListingScreen;
