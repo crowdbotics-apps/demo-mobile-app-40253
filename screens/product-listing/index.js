@@ -49,7 +49,13 @@ const ProductListingScreen = () => {
       <View style={styles.productsContainer}>
         <FlatList data={products} numColumns={2} keyExtractor={item => item.id.toString()} renderItem={({
         item
-      }) => <Product product={item} />} columnWrapperStyle={{
+      }) => <Pressable onPress={() => {
+        navigation.navigate("productDetails1", {
+          name: `${item.name}`
+        });
+      }}>
+              <Product product={item} />
+            </Pressable>} columnWrapperStyle={{
         justifyContent: "space-around"
       }} showsVerticalScrollIndicator={false} style={styles.QLFbVZQY} />
       </View>
@@ -123,28 +129,22 @@ const Product = ({
     fontSize: 12,
     fontWeight: "bold"
   };
-  return <Pressable onPress={() => {
-    navigation.navigate("productDetails1", {
-      name: product.name
-    });
-  }}>
-      <View style={productStyles.container}>
-        <View style={productStyles.imageContainer}>
-          <Image source={require("./15-pack.jpeg")} style={productStyles.productImage} />
+  return <View style={productStyles.container}>
+      <View style={productStyles.imageContainer}>
+        <Image source={require("./15-pack.jpeg")} style={productStyles.productImage} />
 
-          <Image source={product.isFavorite ? require("./assets/isFavouriteIcon.png") : require("./assets/favIcon.png")} style={productStyles.favIcon} />
-        </View>
-        <View style={productStyles.descriptionContainer}>
-          <Text style={productStyles.bold}>{product.name}</Text>
-          <View style={productStyles.availabilityTextContainer}>
-            <Text style={productStyles.availabilityText}>Purchase: </Text>
-            <Text style={availability}>
-              {product.status ? "Available" : "Not available"}
-            </Text>
-          </View>
+        <Image source={product.isFavorite ? require("./assets/isFavouriteIcon.png") : require("./assets/favIcon.png")} style={productStyles.favIcon} />
+      </View>
+      <View style={productStyles.descriptionContainer}>
+        <Text style={productStyles.bold}>{product.name}</Text>
+        <View style={productStyles.availabilityTextContainer}>
+          <Text style={productStyles.availabilityText}>Purchase: </Text>
+          <Text style={availability}>
+            {product.status ? "Available" : "Not available"}
+          </Text>
         </View>
       </View>
-    </Pressable>;
+    </View>;
 };
 
 const productStyles = StyleSheet.create({
