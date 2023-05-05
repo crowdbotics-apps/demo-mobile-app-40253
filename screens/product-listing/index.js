@@ -17,13 +17,13 @@ const ProductListingScreen = () => {
       name: "Pepsi 15 pack",
       status: false,
       isFavorite: true,
-      image: require("./assets/productImage2.png")
+      image: require("./productImage2.png")
     }, {
       id: 3,
       name: "Pepsi 20oz",
       status: true,
       isFavorite: false,
-      image: require("/20-oz.jpeg")
+      image: require("./20-oz.jpeg")
     }, {
       id: 4,
       name: "Wild Cherry 20oz",
@@ -130,7 +130,7 @@ const Product = ({
   }}>
       <View style={productStyles.container}>
         <View style={productStyles.imageContainer}>
-          <Image source={require("./can-pepsi.png")} style={productStyles.productImage} />
+          <Image source={require("./15-pack.jpeg")} style={productStyles.productImage} />
 
           <Image source={product.isFavorite ? require("./assets/isFavouriteIcon.png") : require("./assets/favIcon.png")} style={productStyles.favIcon} />
         </View>
