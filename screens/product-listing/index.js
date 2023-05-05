@@ -1,3 +1,4 @@
+import { Pressable } from "react-native";
 import { useState, useEffect } from "react";
 import { Text, StyleSheet, View, FlatList, Image } from "react-native";
 
@@ -120,7 +121,7 @@ const Product = ({
     fontSize: 12,
     fontWeight: "bold"
   };
-  return <View style={productStyles.container}>
+  return <Pressable><View style={productStyles.container}>
       <View style={productStyles.imageContainer}>
         <Image source={require("./can-pepsi.png")} style={productStyles.productImage} />
 
@@ -135,7 +136,7 @@ const Product = ({
           </Text>
         </View>
       </View>
-    </View>;
+    </View></Pressable>;
 };
 
 const productStyles = StyleSheet.create({
