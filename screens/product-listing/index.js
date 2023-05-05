@@ -125,7 +125,7 @@ const Product = ({
   };
   return <Pressable onPress={() => {
     navigation.navigate("productDetails1", {
-      name: "product.name"
+      name: product.name
     });
   }}>
       <View style={productStyles.container}>

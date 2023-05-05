@@ -1,4 +1,3 @@
-import React from "react";
 import { Text, Image, StyleSheet, View, TouchableHighlight, ScrollView } from "react-native";
 
 const ShoppingCartScreen = () => {
@@ -7,7 +6,7 @@ const ShoppingCartScreen = () => {
         <View style={styles.headerCard}>
           <View style={styles.cardContent}>
             <Text style={styles.cardTextOne}>Order</Text>
-            <Text style={styles.cardTextOne}>30.75$</Text>
+            <Text style={styles.cardTextOne}>{"$30.75"}</Text>
           </View>
           <View style={styles.cardContent}>
             <Text style={styles.cardTextOne}>Delivery</Text>
