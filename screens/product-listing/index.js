@@ -23,7 +23,7 @@ const ProductListingScreen = () => {
       name: "Pepsi 20oz",
       status: true,
       isFavorite: false,
-      image: "https://target.scene7.com/is/image/Target/GUEST_1361a461-e2b2-4de2-98aa-4007e6d8b5c2?wid=725&hei=725&qlt=80&fmt=webp"
+      image: require("./assets/productImage2.png")
     }, {
       id: 4,
       name: "Wild Cherry 20oz",
